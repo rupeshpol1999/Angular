@@ -1,0 +1,11 @@
+<app-header></app-header>
+<div class="leftdiv">
+  <input type="text" [(ngModel)] ="toptext">
+  <input type="text" [(ngModel)]="bottomtext">
+  <button (click)="generatememe()"> Generate Meme</button>
+</div>
+<div class="rightdiv">
+<p>{{text1}}</p>
+<p>{{text2}}</p>
+</div>
+<app-footer></app-footer>

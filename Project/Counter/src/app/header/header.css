@@ -1,0 +1,24 @@
+h1{
+    margin: 0;
+    background-color: #4acdf9;
+    padding: 30px;
+    text-align: center;
+    text-decoration: underline;
+}
+h1 img{
+    width: 30px;
+    height: 20px;
+}
+nav {
+      display: flex;
+      background-color: #322c40;
+    }
+
+    nav a {
+      flex: 1; /* Equal width for all tags */
+      padding: 15px;
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      border-right: 1px solid #555;
+    }

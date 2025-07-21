@@ -1,0 +1,36 @@
+<input type="text" name="" id="" [(ngModel)] = "num">
+<!-- New syntax-->
+<button (click)="evenodd()">Check</button>
+
+<select [(ngModel)]="role" name="" id="">
+  <option value="Teacher">Teacher</option>
+  <option value="Student">Student</option>
+  <option value="Admin">Admin</option>
+</select>
+
+
+@if(check){
+    @if(iseven){
+      <h1>{{num}} is Even</h1>
+    }
+    @else {
+      <h2>{{num}} is odd</h2>
+    }
+}
+
+<!--Old Syntax-->
+<div [ngSwitch]="role">
+  <div *ngSwitchCase="'Teacher'">Welcome to teacher</div>
+  <div *ngSwitchCase="'Student'">Welcome to Student</div>
+  <div *ngSwitchCase="'Admin'">Welcome to Admin</div>
+  <div *ngSwitchDefault>output2</div>
+</div>
+
+<!--New -->
+
+@switch (role) {
+  @case ('Student') { <h1>Welcome to Student Dashboard</h1> }
+  @case ('Teacher') { <h1>Welcome to Teacher Dashboard</h1> }
+  @case ('Admin') { <h1>Welcome to Admin Dashboard</h1> }
+  @default { <h1>Wrong Input</h1> }
+}

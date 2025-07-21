@@ -1,0 +1,16 @@
+
+.Category{
+    display: block;
+    margin-top: 2px;
+    margin-bottom: 0;
+    padding: 10px;
+    padding-left: 30px;
+    
+    background-color: antiquewhite;
+}
+.MovieList{
+    
+    display: flex;
+    align-items: center;
+    overflow-x: scroll;
+}

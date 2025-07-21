@@ -1,0 +1,12 @@
+<div class="currencyconverter">
+    <p>Currency Converter</p> 
+    <div class="body">
+        <label for="">Dollar(&#36;)</label>
+        <input type="number" [(ngModel)]="dolr" >
+
+        <button (click)="convert()" style="background: linear-gradient(to bottom,hsl(0, 0%, 100%) 0%,#474646);">Convert</button>
+        
+        <label for="">Rupees(&#8377;)</label>
+        <input readonly [value] ="result" type="number">
+    </div>
+</div>

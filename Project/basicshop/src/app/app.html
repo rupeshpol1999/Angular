@@ -1,0 +1,13 @@
+<app-header></app-header>
+<main>
+  @for(p of products;track p){
+    <div class="products">
+      <img [src]="p.thumbnail" alt="p.title">
+    <h2>{{p.title}}</h2>
+    <p class="price">Price : ₹ {{p.price}}</p>
+    <p class="category">Category : {{p.category}}</p>
+    </div>
+    <button>Add To Cart</button>
+  }  
+</main>
+<app-footer></app-footer>

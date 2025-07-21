@@ -1,0 +1,34 @@
+<h1>Student Result</h1>
+<div class="Student">
+    <label for="Name">Student Name : </label>
+    <input type="text" name="Student_Name" id="Name" [(ngModel)]="name"><br>
+
+    <label for="Subject">Subjects</label>
+    <div id="Subjects">
+        <label for="HTML">HTML5</label>
+        <input type="text" [(ngModel)]="html">
+
+        <label for="CS3">CSS3</label>
+        <input type="text" id="CSS3" [(ngModel)]="css">
+
+        <label for="">Typescript</label>
+        <input type="text" id="Typescript" [(ngModel)]="typescript">
+
+        <label for="Javascript">Javascript</label>
+        <input type="text" id="Javascript" [(ngModel)]="javascript">
+        <h6 style="color: red;">* All subject Marks should be 0 to 100</h6>
+    </div>
+
+    <button (click)="Check_result()">Check Result</button>
+
+    @if (check) {
+        @if (result) {
+            <h2>{{name}} Is Pass </h2>            
+            <h1>Congratulations</h1>
+        }
+        @else {
+            <h2>{{name}} Is Failed</h2>
+            <h1 style="color: red;">Better Luck Next Time!!</h1>
+        }
+    }
+</div>
