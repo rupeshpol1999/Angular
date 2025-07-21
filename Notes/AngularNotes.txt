@@ -1,0 +1,148 @@
+***********************Angular************************** 
+
+
+**commands : 
+	i.     npm install -g @angular/cli@latest
+	ii.    ng v 
+	iii.   ng new projname
+	iv.   ng generate component compname
+	v.    ng build
+
+**Components :-
+- Components are the basic building blocks of angular application.
+- Whole Application is devided into logical small ui parts called Components.
+- Each Components Have 4 Files such has
+ 		i.    Html (Template)        : Used for View
+ 		ii.   Css(Style)             : used for Styling/desgine
+ 		iii.  ts (Component)         : used for Logic
+ 		iv.   spec.ts(Specification) : used for testing
+
+- Components are usefull for ui reusability and easy to maintain or debug
+- angular used command line interface to create, debug, test components. to this technique is called scaffolding
+
+⦁	Create component command - ng generate component ComponentName
+⦁	ng build
+
+
+**service provider for deploying website on server
+www.netlify.com
+www.vercel.com
+
+
+**Data binding : 
+
+- it refers to the communication between component file (.ts) and template file (.html) within a component
+- there are two kinds of data binding such as
+	1) one way data binding 
+	2) two way data binding 
+
+1.	one way data binding :
+	- using these we can send data from template to component (or ) component to template file
+	- there are three possible ways for one way data binding : 
+
+
+        a) string interpolation :  
+                - it is used to get the data from component file to template file as a string. 
+                - it is represented with double braces
+                            ex. 	//.html											//.ts
+                        <p>The fruit is {{name}}</p>						public class componentname{name:string = "apple" }
+                - but it always pass data as string, sometine we need to pass other sata such as Boolean. for that we can use property binding.
+
+        b) property binding : 
+                - it is also used to get the data from component file to template file as it is.
+                - it is represented as square brackets
+                <element   [property] = "variable">
+                            ex.       //.html											//.ts
+
+                        <img [src] = "url" [alt] = "title"/>						public class compname{ url = "path";  alt = "title";   }
+
+        c) Event Binding :  
+                - it is used to send the data from template to component file as an event. 
+                - it is represented with paranthesis ()
+                        <element (event) "functionname()">
+                            ex. 	//.html											//.ts
+                        <button (click) = "fun()">Click</button>				public class compname{ 	fun() { alert("Hello World") }          }
+
+
+2) Two way data binding : 
+        - angular can even make data transfer between component and template file at a time called two way data binding. 
+        - to use two way data binding we can import a module name "formsmodule" which contains a directive "ngmodel"
+
+
+
+<input type="number" placeholder="Enter first num" [(ngmodel)] = "num1">
+<input type="number" placeholder="Enter second num" [(ngmodel)] = "num2">
+<button (click)="add()">Convert</button>
+<p>The Addition is {{value}}</p>
+
+
+class app{
+                num1:number = 0;
+                num2:number = 0;
+                value:number = 0;
+                convert(){
+                        this.value = this.num1 + this.num2
+                }
+        }
+
+
+
+
+* Directives : 
+        - directives in angular are used to manipulate or control the DOM() of element or control flow of element.
+        - there are three types of directives such as
+                1) structural directives 
+                2) porperty directives
+                3) custom directives
+        1) strictural directives:
+                - these directives are used to control the flow of element. 
+                - thats why they are also called control flow directives
+                - there are three structural directives
+                        i) ngIf (or) @if
+                        ii) ngSwitch
+                        iii) ngFor
+                i) ngIf : 
+                        - it is used to determine which element need to be presented based on a condition.
+                        - in latest version of angular it is modified as "@if"
+                ii) ngswitch  : 
+                        -switch is used to select one of multiple otions
+                        - it is an alternative of ifelse if.
+                        - we can take multiple cases with expression will be executed and in acase of 
+                          no matching to any case default case will be executed.
+
+                          //old syntax
+                                <div ngSwitch = "value">
+                                <p *ngSwitchCase="Value1"> Content 1 </p>
+                                <p *ngSwitchCase="Value2"> Content 2 </p>
+                                <p *ngSwitchCase="Value3"> Content 3 </p>
+                                <p *ngSwitchDefault> Content 5 </p>
+                                </div>
+
+                          //new syntax
+                                @switch(value)
+                                {
+                                        @case(value1){ <p>Content 1 </p>   }
+                                        @case(value2){ <p>Content 2 </p>   }
+                                        @case(value3){ <p>Content 3 </p>   }
+                                        @default{ <p>Content default </p>  }
+                                }
+                iii) @for or ngfor : 
+                        - for is used to itterate an array of values.
+                        - it is similar for of syntax.
+                        - using these we can repeate certain elements again and again
+
+                        //app.ts
+                                let arr:string[] = ["Raju","Prasad","Shekhar"]
+
+                        //old syntax
+                                <p *ngfor = "let m of arr">{{m}}</p>
+
+                        //new syntax
+                                @for(m of arr;track m){
+                                        <p>The Name Is {{m}} </p>
+                                }
+
+                        //index printing
+                                @for(m of arr;let ind = $index; track m){
+                                        <p>The Name Is {{m}} {{ind}} </p>
+                                }
