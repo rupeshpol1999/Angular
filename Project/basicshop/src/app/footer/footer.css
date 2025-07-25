@@ -3,5 +3,6 @@ footer{
     padding-inline-start: 20px;
     text-align: center;
     text-decoration: underline;
-    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 0;
 }

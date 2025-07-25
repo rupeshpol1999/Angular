@@ -1,13 +1,27 @@
 <app-header></app-header>
+<div class="cart-container">
+  <a href=""> <img src="https://www.reshot.com/preview-assets/icons/QZY7FE92BM/shopping-cart-QZY7FE92BM.svg" alt="Cart" class="cart-img">
+  <span class="cart-count">{{count}}</span></a>
+</div>
+<select name="" id="">
+  <option value="">All Products</option>
+  <option value="">beauty</option>
+  <option value="">fragrances</option>
+  <option value="">groceries</option>
+</select>
 <main>
   @for(p of products;track p){
     <div class="products">
       <img [src]="p.thumbnail" alt="p.title">
     <h2>{{p.title}}</h2>
-    <p class="price">Price : ₹ {{p.price}}</p>
+    <p class="price">Price : $ {{p.price}}</p>
     <p class="category">Category : {{p.category}}</p>
+    <button (click)="addcart()">Add To Cart</button>
     </div>
-    <button>Add To Cart</button>
-  }  
+  }
+  @if(status){
+      <p>Product Added Successfully.</p>
+      <button class="btn btn-success">Added</button>
+    } 
 </main>
 <app-footer></app-footer>

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "basicshop": {
+    "pipe": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -25,9 +25,13 @@
               }
             ],
             "styles": [
-              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
-            ]
+            ],
+            "server": "src/main.server.ts",
+            "outputMode": "server",
+            "ssr": {
+              "entry": "src/server.ts"
+            }
           },
           "configurations": {
             "production": {
@@ -57,10 +61,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "basicshop:build:production"
+              "buildTarget": "pipe:build:production"
             },
             "development": {
-              "buildTarget": "basicshop:build:development"
+              "buildTarget": "pipe:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -91,6 +95,6 @@
     }
   },
   "cli": {
-    "analytics": "3b939046-2243-49a0-ae96-a42f58800537"
+    "analytics": "30311d69-e0c2-4e96-ab5b-3e0022c068cf"
   }
 }

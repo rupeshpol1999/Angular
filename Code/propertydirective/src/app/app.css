@@ -1,0 +1,12 @@
+.dark{
+    background-color: black;
+    color: white;
+}
+.rupesh{
+    animation: bounce 1s ease alternate infinite;
+}
+@keyframes bounce{
+    to{
+        transform: translate(-10px);
+    }
+}

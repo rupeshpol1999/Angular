@@ -10,6 +10,9 @@ import { Footer } from './footer/footer';
   styleUrl: './app.css'
 })
 export class App {
+  count:number = 0;
+  status:boolean = false
+  newproducts:any[] = []
   products: any[] = [
     {
       id: 1,
@@ -1791,4 +1794,8 @@ export class App {
         'https://cdn.dummyjson.com/product-images/groceries/kiwi/thumbnail.webp',
     },
   ];
+  addcart(){
+      if(this.count++)
+      {this.status = true}
+  }
 }

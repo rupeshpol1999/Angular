@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "basicshop": {
+    "propertydirective": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -25,7 +25,6 @@
               }
             ],
             "styles": [
-              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ]
           },
@@ -57,10 +56,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "basicshop:build:production"
+              "buildTarget": "propertydirective:build:production"
             },
             "development": {
-              "buildTarget": "basicshop:build:development"
+              "buildTarget": "propertydirective:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -91,6 +90,6 @@
     }
   },
   "cli": {
-    "analytics": "3b939046-2243-49a0-ae96-a42f58800537"
+    "analytics": "0afab218-eb12-45e3-9e9d-4d7e1786e86b"
   }
 }

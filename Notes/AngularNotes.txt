@@ -9,19 +9,19 @@
 	v.    ng build
 
 **Components :-
-- Components are the basic building blocks of angular application.
-- Whole Application is devided into logical small ui parts called Components.
-- Each Components Have 4 Files such has
+        - Components are the basic building blocks of angular application.
+        - Whole Application is devided into logical small ui parts called Components.
+        - Each Components Have 4 Files such has
  		i.    Html (Template)        : Used for View
  		ii.   Css(Style)             : used for Styling/desgine
  		iii.  ts (Component)         : used for Logic
  		iv.   spec.ts(Specification) : used for testing
 
-- Components are usefull for ui reusability and easy to maintain or debug
-- angular used command line interface to create, debug, test components. to this technique is called scaffolding
+        - Components are usefull for ui reusability and easy to maintain or debug
+        - angular used command line interface to create, debug, test components. to this technique is called scaffolding
 
-⦁	Create component command - ng generate component ComponentName
-⦁	ng build
+        ⦁ Create component command - ng generate component ComponentName
+        ⦁ ng build
 
 
 **service provider for deploying website on server
@@ -36,7 +36,7 @@ www.vercel.com
 	1) one way data binding 
 	2) two way data binding 
 
-1.	one way data binding :
+1. one way data binding :
 	- using these we can send data from template to component (or ) component to template file
 	- there are three possible ways for one way data binding : 
 
@@ -94,7 +94,7 @@ class app{
                 1) structural directives 
                 2) porperty directives
                 3) custom directives
-        1) strictural directives:
+        1) structural directives:
                 - these directives are used to control the flow of element. 
                 - thats why they are also called control flow directives
                 - there are three structural directives
@@ -145,4 +145,82 @@ class app{
                         //index printing
                                 @for(m of arr;let ind = $index; track m){
                                         <p>The Name Is {{m}} {{ind}} </p>
-                                }
+
+
+        2) Property Directives : these directives are also called attribute directives  which are used 
+                                        the DOM of a element there are two property directive such as
+
+                                        i) ngClass
+                                        ii) ngStyle
+                                i) ngClass : 
+                                        - it is used to add or remove CSS class names of an element.
+                                ii) ngStyle : 
+                                        - it is used to add or remove inline style from an element.
+        3) custom Directives : 
+                - we can create our own directives which can be used to manipulate DOM of an element 
+                - create directives in terminal "ng directive directivename"
+                - it will create directivename.ts and spec.ts file.
+                - to manipulate an element DOM, we need to use selector name inside directivename.ts to elements
+                <element selector>content</element>
+
+                we can select element with following code in directive.ts
+                import{ElementRef} from '@angular/core';
+
+                class directiveName(punlic ele:ElementRef){
+                        this.ele.nativeElement.style.propertyName = "
+                }
+
+***** Pipes ***********
+
+        pipesare used to tranform the data they use symbol pipe' | ' 
+        there are two types of pipes such as 
+                1) default pipes
+                2) custom pipes
+        1) default pipe  : 
+                these pipe are used for different puposes and are provided by angular
+                a) uppercase : we can use this to transform data into uppercase
+                b) lowercase : we can use this to transform data into lowercase
+                c) number/decimal pipe :  we can use this to round figure the decimal values
+                        <p>{{value | number :'minIntegerDigits.minFractionDigits - maxFractionDigits'}}
+                d) currency : we can use this pipe to transform the data into specific currency.
+                              it will add currency symbol infront of valuer. by default currency symbol is $
+                                <p>{{value | currency:'country code'}} 
+                                ***for india country code is "INR"
+                e) date pipe : we can use this to transform the dat into specific date format.
+                        //.ts 
+                        dt = new date()
+                        //html
+                        <p>{{dt | date : MM/dd/yy - hh:mm:ss}}</p>
+                f) slice pipe : we can use this pipe to cut the string between specific indexces 
+                        <p>{{value | slice:startIndex:endIndex}}</p>
+                g) json pipe : we can use these pipe to convert object data to json data to print easily
+                        <p>{{value | json}}</p>
+        2) custom pipe : 
+                        we can create any pipe using "ng generate pipe pipename" in cli.
+                        it create pipename.ts file which contain
+
+
+interview question
+        1) what is angular? what is used of angular
+        2) diff bet angular and react
+        3) diff between angular and angular json
+        4) angular architecture
+                angular supports component driven architecture and recent version supports sandalone component
+                and olden version uses components that are managed by modules. every component have template(html)
+                and component(ts) file that are communicated using data binding. we can manipulate DOM of element 
+                using directive and transform data in template using pipes. one component can share data to another 
+                component through common point called service.
+
+        5) diff between typescript and javascript ?
+        6) what is component ? what is the use of components ?
+        7) explain component creation and files in angular ? 
+        8) what is data binding and explain one way and two way data binding ?
+        9) what is directive ? explain structural directvies?
+        10) explain property directive and how to create custom directive ?
+        11) what are pipe and how to use pipes in angular ?
+        12) what are pure and impure pipe?
+             In angular, all defaults pipe are pure pipe. a pipe is called pure pipe 
+                i) if it only depends on input value
+                ii) pure pipes uses memoization(it remembers previous value based on input.
+                     it calls pipe only if input changes)
+             any pipe that doesn't follows this rules is called impure pipe.
